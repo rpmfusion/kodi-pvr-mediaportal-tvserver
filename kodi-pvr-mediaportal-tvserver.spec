@@ -1,6 +1,6 @@
-%global commit d261c83a4ab40441be32c1202138fc6409a22974
+%global commit dece80d3f144c3bfd0026e67d0e9f6f95eae6db8
 %global short_commit %(c=%{commit}; echo ${c:0:7})
-%global commit_date 20170407
+%global commit_date 20170621
 
 %global kodi_addon pvr.mediaportal.tvserver
 %global kodi_version 17.0
@@ -9,7 +9,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        2.4.19
+Version:        2.4.20
 Release:        1%{?dist}
 Summary:        Kodi's MediaPortal TVServer client addon
 
@@ -59,6 +59,9 @@ on the MediaPortal TVServer backend.
 
 
 %changelog
+* Tue Oct 03 2017 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:2.4.20-1
+- Update to 2.4.20
+
 * Sat Apr 29 2017 Mohamed El Morabity <melmorabity@fedorapeople.org> - 1:2.4.19-1
 - Update to latest stable release for Kodi 17
 
