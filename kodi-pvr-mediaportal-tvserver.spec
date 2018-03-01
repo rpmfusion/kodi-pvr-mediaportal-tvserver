@@ -10,7 +10,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
 Version:        2.4.20
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Kodi's MediaPortal TVServer client addon
 
 Group:          Applications/Multimedia
@@ -61,6 +61,9 @@ export CXXFLAGS="$RPM_OPT_FLAGS -DXLOCALE_NOT_USED=1"
 
 
 %changelog
+* Thu Mar 01 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 1:2.4.20-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Tue Oct 03 2017 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:2.4.20-2
 - Fix build with glibc 2.26 (xlocale.h no longer available)
 
