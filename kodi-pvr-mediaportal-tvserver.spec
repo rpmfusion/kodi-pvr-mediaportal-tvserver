@@ -12,7 +12,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
 Version:        3.4.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        MediaPortal PVR for Kodi
 
 # Bundled live555 is LGPLv2+. See
@@ -57,6 +57,9 @@ ExclusiveArch:  i686 x86_64
 
 
 %changelog
+* Thu Jul 26 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:3.4.3-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Fri Mar 16 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:3.4.3-1
 - Update to latest stable release for Kodi 18
 
