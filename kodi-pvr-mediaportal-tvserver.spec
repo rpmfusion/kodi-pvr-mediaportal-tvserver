@@ -12,7 +12,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
 Version:        3.5.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        MediaPortal PVR for Kodi
 
 # Bundled live555 is LGPLv2+. See
@@ -30,7 +30,7 @@ BuildRequires:  pkgconfig(tinyxml)
 BuildRequires:  platform-devel
 Requires:       kodi >= %{kodi_version}
 Provides:       bundled(live555) = %{internal_live555_version}
-ExclusiveArch:  i686 x86_64 aarch64
+ExcludeArch:    %{power64} ppc64le
 
 %description
 %{summary}.
@@ -57,6 +57,9 @@ ExclusiveArch:  i686 x86_64 aarch64
 
 
 %changelog
+* Mon Oct 15 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:3.5.6-2
+- Enable arm build
+
 * Sat Sep 01 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:3.5.6-1
 - Update to 3.5.6
 - Enable aarch64 build
