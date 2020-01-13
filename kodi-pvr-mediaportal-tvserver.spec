@@ -1,18 +1,13 @@
-%global commit cc3eaf05e1459bc9981b00c6bed32adddca53630
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20180825
-
 %global kodi_addon pvr.mediaportal.tvserver
 %global kodi_version 18.0
-
-%global internal_live555_version 2010.03.16
+%global kodi_codename Leia
 
 Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        3.5.6
-Release:        4%{?dist}
+Version:        3.5.18
+Release:        1%{?dist}
 Summary:        MediaPortal PVR for Kodi
 
 # Bundled live555 is LGPLv2+. See
@@ -20,7 +15,7 @@ Summary:        MediaPortal PVR for Kodi
 # for explanation about this bundling
 License:        GPLv2+ and LGPLv2+
 URL:            https://github.com/kodi-pvr/%{kodi_addon}/
-Source0:        https://github.com/kodi-pvr/%{kodi_addon}/archive/%{shortcommit}/%{kodi_addon}-%{shortcommit}.tar.gz
+Source0:        %{url}/archive/%{version}-%{kodi_codename}/%{kodi_addon}-%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
@@ -29,7 +24,7 @@ BuildRequires:  kodi-platform-devel >= %{kodi_version}
 BuildRequires:  pkgconfig(tinyxml)
 BuildRequires:  platform-devel
 Requires:       kodi >= %{kodi_version}
-Provides:       bundled(live555) = %{internal_live555_version}
+Provides:       bundled(live555) = 2010.03.16
 ExcludeArch:    %{power64} ppc64le
 
 %description
@@ -37,7 +32,7 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %prep
-%autosetup -n %{kodi_addon}-%{commit}
+%autosetup -n %{kodi_addon}-%{version}-%{kodi_codename}
 
 
 %build
@@ -57,6 +52,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Mon Jan 13 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:3.5.18-1
+- Update to 3.5.18
+
 * Fri Aug 09 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:3.5.6-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
