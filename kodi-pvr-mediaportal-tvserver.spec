@@ -6,7 +6,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        6.0.1
+Version:        8.0.0
 Release:        1%{?dist}
 Summary:        MediaPortal PVR for Kodi
 
@@ -51,6 +51,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Mon Nov 16 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:8.0.0-1
+- Update to 8.0.0
+
 * Thu Aug 20 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:6.0.1-1
 - Update to 6.0.1 (switch to Matrix branch)
 
