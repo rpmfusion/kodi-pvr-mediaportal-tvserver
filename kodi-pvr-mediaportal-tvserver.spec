@@ -6,7 +6,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        8.1.0
+Version:        8.2.1
 Release:        1%{?dist}
 Summary:        MediaPortal PVR for Kodi
 
@@ -20,7 +20,6 @@ Source0:        %{url}/archive/%{version}-%{kodi_codename}/%{kodi_addon}-%{versi
 BuildRequires:  cmake3
 BuildRequires:  gcc-c++
 BuildRequires:  kodi-devel >= %{kodi_version}
-BuildRequires:  pkgconfig(p8-platform)
 BuildRequires:  pkgconfig(tinyxml)
 Requires:       kodi >= %{kodi_version}
 Provides:       bundled(live555) = 2010.03.16
@@ -51,6 +50,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Sun Jul 11 2021 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:8.2.1-1
+- Update to 8.2.1
+
 * Fri Jan 29 2021 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:8.1.0-1
 - Update to 8.1.0
 
