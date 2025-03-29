@@ -6,8 +6,8 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        21.0.0
-Release:        3%{?dist}
+Version:        21.0.5
+Release:        1%{?dist}
 Summary:        MediaPortal PVR for Kodi
 
 # Bundled live555 is LGPL-2.1-or-later. See
@@ -60,6 +60,9 @@ appstream-util validate-relax --nonet $RPM_BUILD_ROOT%{_metainfodir}/%{name}.met
 
 
 %changelog
+* Sat Mar 29 2025 Leigh Scott <leigh123linux@gmail.com> - 1:21.0.5-1
+- Update to 21.0.5
+
 * Tue Jan 28 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1:21.0.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_42_Mass_Rebuild
 
